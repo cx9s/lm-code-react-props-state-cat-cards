@@ -117,24 +117,20 @@ interface CatCardProps {
   catIndex: number;
 }
 
-const CatCard: React.FC<CatCardProps> = (props) => {
-  const favFoodsText = props.catObject.favFoods.join(", ");
+const CatCard: React.FC<CatCardProps> = ({
+  catObject: { name, species, favFoods, birthYear },
+  catIndex,
+}) => {
+  const favFoodsText = favFoods.join(", ");
+  const currentImage = images[catIndex];
+
   return (
     <div className="card">
-      <h3 className="card__text card__header">{props.catObject.name}</h3>
-      <p className="card__text">Species: {props.catObject.species}</p>
+      <h3 className="card__text card__header">{name}</h3>
+      <p className="card__text">Species: {species}</p>
       <p className="card__text">Favourite Food(s): {favFoodsText}</p>
-      <p className="card__text">Birth Year: {props.catObject.birthYear}</p>
-      {props.catIndex < images.length && (
-        <CatImage
-          image={images[props.catIndex].image}
-          altText={images[props.catIndex].altText}
-          licenceType={images[props.catIndex].licenceType}
-          licenceUrl={images[props.catIndex].licenceUrl}
-          attributionName={images[props.catIndex].attributionName}
-          attributionUrl={images[props.catIndex].attributionUrl}
-        />
-      )}
+      <p className="card__text">Birth Year: {birthYear}</p>
+      {catIndex < images.length && <CatImage imageObject={currentImage} />}
     </div>
   );
 };
