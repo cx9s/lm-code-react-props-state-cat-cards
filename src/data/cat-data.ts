@@ -1,5 +1,4 @@
 import Cat from "./cat";
-import { v4 as uuidv4 } from "uuid";
 
 const catData: Cat[] = [
   {
@@ -81,7 +80,5 @@ const catData: Cat[] = [
     birthYear: 2016,
   },
 ];
-
-catData.forEach((cat) => (cat.id = uuidv4()));
 
 export default catData;

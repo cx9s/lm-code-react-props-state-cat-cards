@@ -19,7 +19,7 @@ function App(): JSX.Element {
       <main>
         <div className="cards__wrapper">
           {cats.map((cat, index) => (
-            <CatCard key={cat.id} catObject={cat} catIndex={index} />
+            <CatCard key={index} catObject={cat} catIndex={index} />
           ))}
         </div>
       </main>
