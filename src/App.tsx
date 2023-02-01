@@ -81,12 +81,12 @@ function App(): JSX.Element {
       birthYear: 2021,
     },
   ]);
-  console.log("Our pretties 😻: ", cats);
+  const catCount = cats.length;
 
   return (
     <>
       <Navbar />
-      <Header />
+      <Header catCount={catCount} />
 
       <main>
         <div className="cards__wrapper">
