@@ -4,10 +4,9 @@ import Navbar from "./components/navbar";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import { Cat, Dog } from "./data/pet";
-import CatCard from "./components/cat_card";
+import Card from "./components/card";
 import catData from "./data/cat-data";
 import dogData from "./data/dog-data";
-import DogCard from "./components/dog_card";
 
 function App(): JSX.Element {
   const [cats, setCats] = useState<Cat[]>(catData);
@@ -24,10 +23,10 @@ function App(): JSX.Element {
       <main>
         <div className="cards__wrapper">
           {dogs.map((dog, index) => (
-            <DogCard key={index} dogObject={dog} />
+            <Card key={index} petObject={dog} />
           ))}
           {cats.map((cat, index) => (
-            <CatCard key={index} catObject={cat} catIndex={index} />
+            <Card key={index} petObject={cat} index={index} />
           ))}
         </div>
       </main>

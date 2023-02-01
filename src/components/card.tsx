@@ -1,18 +1,21 @@
-import { Cat } from "../data/pet";
+import { Cat, Dog } from "../data/pet";
 import CatImage from "./cat_image";
 import catImageData from "../data/cat-image-data";
 
-interface CatCardProps {
-  catObject: Cat;
-  catIndex: number;
+interface CardProps {
+  petObject: Cat | Dog;
+  index?: number;
 }
 
-const CatCard: React.FC<CatCardProps> = ({
-  catObject: { name, species, favFoods, birthYear },
-  catIndex,
+const Card: React.FC<CardProps> = ({
+  petObject: { name, species, favFoods, birthYear },
+  index = -1,
 }) => {
   const favFoodsText = favFoods.join(", ");
-  const currentImage = catImageData[catIndex];
+  const currentImage =
+    index > -1
+      ? catImageData[index]
+      : { image: "", altText: "", licenceType: "", licenceUrl: "" };
 
   return (
     <div className="card">
@@ -20,11 +23,11 @@ const CatCard: React.FC<CatCardProps> = ({
       <p className="card__text">Species: {species}</p>
       <p className="card__text">Favourite Food(s): {favFoodsText}</p>
       <p className="card__text">Birth Year: {birthYear}</p>
-      {catIndex < catImageData.length && (
+      {index > -1 && index < catImageData.length && (
         <CatImage imageObject={currentImage} />
       )}
     </div>
   );
 };
 
-export default CatCard;
+export default Card;
