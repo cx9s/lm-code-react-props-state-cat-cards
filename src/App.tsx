@@ -18,7 +18,7 @@ function App(): JSX.Element {
   return (
     <>
       <Navbar />
-      <Header catCount={catCount} />
+      <Header catCount={catCount} dogCount={dogCount} />
 
       <main>
         <div className="cards__wrapper">
