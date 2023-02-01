@@ -1,4 +1,4 @@
-import Cat from "../data/cat";
+import { Cat } from "../data/pet";
 import CatImage from "./cat_image";
 import catImageData from "../data/cat-image-data";
 
