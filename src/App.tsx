@@ -23,10 +23,10 @@ function App(): JSX.Element {
       <main>
         <div className="cards__wrapper">
           {dogs.map((dog, index) => (
-            <Card key={index} petObject={dog} />
+            <Card key={`dog-${index}`} petObject={dog} />
           ))}
           {cats.map((cat, index) => (
-            <Card key={index} petObject={cat} index={index} />
+            <Card key={`cat-${index}`} petObject={cat} index={index} />
           ))}
         </div>
       </main>
