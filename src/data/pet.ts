@@ -5,6 +5,10 @@ interface Pet {
   birthYear: number;
 }
 
-export interface Cat extends Pet {}
+export interface Cat extends Pet {
+  petType: "Cat";
+}
 
-export interface Dog extends Pet {}
+export interface Dog extends Pet {
+  petType: "Dog";
+}
