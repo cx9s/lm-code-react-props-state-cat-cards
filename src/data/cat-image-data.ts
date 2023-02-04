@@ -10,15 +10,7 @@ import cat9 from "../assets/images/cat9.jpg";
 import cat10 from "../assets/images/cat10.jpg";
 import cat11 from "../assets/images/cat11.jpg";
 import cat12 from "../assets/images/cat12.jpg";
-
-export interface Image {
-  image: string;
-  altText: string;
-  licenceType: string;
-  licenceUrl: string;
-  attributionName?: string;
-  attributionUrl?: string;
-}
+import { Image } from "./image";
 
 const catImageData: Image[] = [
   {

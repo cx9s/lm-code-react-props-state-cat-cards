@@ -1,6 +1,6 @@
-import { Image } from "../data/cat-image-data";
+import { Image } from "../data/image";
 
-const CatImage: React.FC<{ imageObject: Image }> = ({ imageObject }) => {
+const PetImage: React.FC<{ imageObject: Image }> = ({ imageObject }) => {
   const {
     image,
     altText,
@@ -25,4 +25,4 @@ const CatImage: React.FC<{ imageObject: Image }> = ({ imageObject }) => {
   );
 };
 
-export default CatImage;
+export default PetImage;

@@ -19,6 +19,8 @@ const dogData: Array<Dog> = [
     favFoods: ["bouncy balls"],
     birthYear: 2015,
   },
-];
+].map((dog) => {
+  return { type: "Dog", ...dog };
+});
 
 export default dogData;

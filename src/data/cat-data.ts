@@ -1,4 +1,5 @@
 import { Cat } from "./pet";
+import catImageData from "./cat-image-data";
 
 const catData: Cat[] = [
   {
@@ -79,6 +80,19 @@ const catData: Cat[] = [
     favFoods: ["fish, rum"],
     birthYear: 2016,
   },
-];
+].map((cat, index) => {
+  let catObj: Cat = {
+    type: "Cat",
+    name: "",
+    species: "",
+    favFoods: [],
+    birthYear: 0,
+  };
+  catObj =
+    index < catImageData.length
+      ? { type: "Cat", ...cat, image: catImageData[index] }
+      : { type: "Cat", ...cat };
+  return catObj;
+});
 
 export default catData;
